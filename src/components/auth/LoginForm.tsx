@@ -4,18 +4,19 @@ import React, { useState } from 'react';
 import { GoogleAuthButton } from './GoogleAuthButton';
 import { Card, CardContent } from '../ui/Card';
 import { signIn } from 'next-auth/react';
-    
+
 
 export const LoginForm: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const handleGoogleSignIn = async () => {
+    console.log('Google sign-in initiated');
     setIsLoading(true);
     try {
     //   NextAuth Google OAuth integration
       const result = await signIn('google', { 
         callbackUrl: '/dashboard',
-        redirect: false 
+        redirect: true
       });
       console.log('Google sign-in initiated');
       
