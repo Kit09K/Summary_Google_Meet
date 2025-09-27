@@ -5,7 +5,7 @@ import { LoginForm } from '@/components/auth/LoginForm'
 export default function LoginPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 flex items-center justify-center p-4">
-      <h1 className='bg-red-500'>11</h1>
+      <LoginForm />
     </div>
   )
 }
