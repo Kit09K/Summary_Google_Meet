@@ -33,19 +33,16 @@ export const Avatar: React.FC<AvatarProps> = ({
 
   const baseStyles = `inline-flex items-center justify-center rounded-full border-2 border-gray-200 ${sizes[size]} ${className}`;
 
-  if (src) {
-    return (
-      <img
-        src={src}
-        alt={alt || name || 'Avatar'}
-        className={`${baseStyles} object-cover`}
-      />
-    );
-  }
+  const validSrc = src && src.trim() !== '' ? src : '/default-avatar.png';
 
   return (
-    <div className={`${baseStyles} bg-gray-100 text-gray-600 font-medium`}>
-      {getInitials(name)}
-    </div>
+    <img
+      src={validSrc}
+      alt={alt || name || 'Avatar'}
+      className={`${baseStyles} object-cover`}
+      onError={(e) => {
+        (e.currentTarget as HTMLImageElement).src = '/default-avatar.png';
+      }}
+    />
   );
 };
