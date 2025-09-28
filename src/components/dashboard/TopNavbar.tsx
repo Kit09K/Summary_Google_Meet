@@ -38,7 +38,7 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({ user, onLogout }) => {
               />
             </svg>
           </div>
-          <h1 className="text-xl font-bold text-gray-900">MeetSummary</h1>
+          <h1 className="text-xl font-bold text-gray-900"><a href="/dashboard">MeetSummary</a></h1>
         </div>
 
         {/* User Profile */}

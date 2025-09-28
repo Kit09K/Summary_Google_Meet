@@ -1,3 +1,5 @@
+"use client";
+
 export const LoadingSpinner: React.FC<{ size?: 'sm' | 'md' | 'lg' }> = ({ 
   size = 'md' 
 }) => {
