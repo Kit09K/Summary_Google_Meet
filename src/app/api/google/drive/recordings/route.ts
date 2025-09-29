@@ -58,7 +58,7 @@ export async function GET(request: NextRequest) {
     const query = "mimeType contains 'video/' or mimeType contains 'audio/'"
     const fields = "files(id,name,size,createdTime,webViewLink,thumbnailLink,mimeType)"
     
-    const filesUrl = `https://www.googleapis.com/drive/v3/files?q=${encodeURIComponent(query)}&fields=${encodeURIComponent(fields)}&orderBy=createdTime desc&pageSize=10`
+    const filesUrl = `https://www.googleapis.com/drive/v3/files?q=${encodeURIComponent(query)}&fields=${encodeURIComponent(fields)}&orderBy=createdTime desc&pageSize=40`
     
     const filesResponse = await fetch(filesUrl, {
       headers: {
